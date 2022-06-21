@@ -1,26 +1,39 @@
 !- =============================================
 !- RETROSNAKE (C) 2022 GORKA SUAREZ GARCIA
 !- =============================================
-10 SZ%=(36*18)-1  : REM MAX COORDS. SIZE (647)
-20 DIM SC%(SZ%)   : REM SNAKE COORDINATES (X,Y)
+!- INT.V: FL%, SD%, SL%, SZ%
+!- FLT.V: I, J, PTS, ZX, ZY
+!- STR.V: KC$
+!- INT.A: BK%(?), P%(?), R%(?), SC%(647)
+!- FLT.A: G(6), P(?), R(?)
+!- STR.A: G$(8), P$(?), R$(?)
+!- =============================================
+10 SZ%=(36*18)-1 : REM MAX COORDS. SIZE (647)
+15 DIM SC%(SZ%)  : REM SNAKE COORDINATES (X,Y)
 !- =============================================
 !- GAME COORDINATES (INNER WORLD = 36X18)
-!- 0: WORLD LEFT
-!- 1: WORLD RIGHT
-!- 2: WORLD TOP
-!- 3: WORLD DOWN
-!- 4: HUD SCORE
-!- 5: HUD POINTS
-!- 6: HUD TITLE
+!- 0: WORLD LEFT   (X)
+!- 1: WORLD RIGHT  (X)
+!- 2: WORLD TOP    (Y)
+!- 3: WORLD DOWN   (Y)
+!- 4: HUD SCORE    (X)
+!- 5: HUD POINTS   (X)
+!- 6: HUD TITLE    (X)
+!- 7: HUD PAUSED   (X)
+!- 8: WORLD WIDTH  (X)
+!- 9: WORLD HEIGHT (Y)
 !- =============================================
-30 DIM G(6)
-40 G(0)=1
-50 G(1)=38
-60 G(2)=1
-70 G(3)=20
-80 G(4)=3
-90 G(5)=9
-100 G(6)=27
+20 DIM G(9)
+25 G(0)=1
+30 G(1)=38
+35 G(2)=1
+40 G(3)=20
+45 G(4)=3
+50 G(5)=9
+55 G(6)=27
+60 G(7)=17
+65 G(8)=G(1)-(G(0)+1)
+70 G(9)=G(3)-(G(2)+1)
 !- =============================================
 !- GAME RENDER DATA
 !- 0: CLEAR TILE
@@ -64,13 +77,15 @@
 360 POKE 646,1         : REM CURSOR COLOR
 370 POKE 53281,0       : REM BACKGROUND COLOR
 380 POKE 53280,0       : REM BORDER COLOR
+385 POKE 788,52        : REM DISABLE RUN/STOP
 390 GOTO 1000          : REM MAIN MENU (1000)
 !- =============================================
 !- [400] EXIT()
 !- =============================================
-400 POKE 646,BK%(0)
-410 POKE 53281,BK%(1)
-420 POKE 53280,BK%(2)
+400 POKE 646,BK%(0)   : REM CURSOR COLOR
+410 POKE 53281,BK%(1) : REM BACKGROUND COLOR
+420 POKE 53280,BK%(2) : REM BORDER COLOR
+425 POKE 788,49       : REM ENABLE RUN/STOP
 430 PRINT "{clear}";
 440 END
 !- =============================================
@@ -91,7 +106,7 @@
 !- =============================================
 520 POKE 211,P%(0) : REM $00D3=C
 530 POKE 214,P%(1) : REM $00D6=R
-540 SYS 58640     : REM JSR $E510
+540 SYS 58640      : REM JSR $E510
 550 RETURN
 !- =============================================
 !- [560] SUB:XY2WORD(X,Y)
@@ -104,6 +119,18 @@
 580 R%(0)=(P%(0)AND(-256))/256
 590 R%(1)=P%(0)AND(255)
 600 RETURN
+!- =============================================
+!- [610] SUB:GETCHAR(C,R)
+!- =============================================
+610 R(0)=PEEK(1024+(P(1)*40)+P(0))
+615 IF R(0)>=0   AND R(0)<32  THEN R(0)=R(0)+64
+620 IF R(0)>=64  AND R(0)<96  THEN R(0)=R(0)+128
+625 IF R(0)>=96  AND R(0)<128 THEN R(0)=R(0)+64
+630 IF R(0)>=128 AND R(0)<192 THEN R(0)=R(0)-128
+635 IF R(0)>=192 AND R(0)<255 THEN R(0)=R(0)-64
+640 IF R(0)=94 THEN R(0)=255
+645 R$(0)=CHR$(R(0))
+650 RETURN
 !- =============================================
 !- END OF FILE
 !- =============================================
