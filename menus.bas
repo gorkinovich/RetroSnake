@@ -2,21 +2,21 @@
 !- [1010] MAIN MENU DRAW
 !- =============================================
 1000 PRINT "{clear}":PRINT
-1010 PRINT "    {reverse on}{white}   {127}"
-1020 PRINT "    {reverse on} {reverse off}  {reverse on} "
-1030 PRINT "    {reverse on} {reverse off}  {169}  {reverse on}{red}{169}  {reverse off}{169} {reverse on}{white}{169}   {reverse off}{169} {reverse on}   {127}{reverse off} {reverse on}{green}{169}  {127}"
-1040 PRINT "    {reverse on}{white}   {reverse off}   {reverse on}{red} {reverse off}      {reverse on}{white} {reverse off}   {reverse on} {reverse off}  {169} {reverse on}{green} {reverse off}{169}{127}{reverse on} "
-1050 PRINT "    {reverse on}{white} {reverse off} {127}{reverse on}{127}{reverse off}  {reverse on}{red}   {reverse off}    {reverse on}{white} {reverse off}   {reverse on}   {reverse off}  {reverse on}{green} {reverse off}  {reverse on} "
-1060 PRINT "    {reverse on}{white} {reverse off}  {127}{reverse on}{127}{reverse off} {reverse on}{red} {reverse off}      {reverse on}{white} {reverse off}   {reverse on} {reverse off} {127}{reverse on}{127}{reverse off} {reverse on}{green} {127}{169} "
-1070 PRINT "    {white}{169}   {127} {red}{127}{reverse on}  {127}{reverse off}   {white}{169}   {169}  {127} {green}{127}{reverse on}  {reverse off}{169}"
+1010 PRINT "    {18}{white}   {127}"
+1020 PRINT "    {18} {146}  {18} "
+1030 PRINT "    {18} {146}  {169}  {18}{red}{169}  {146}{169} {18}{white}{169}   {146}{169} {18}   {127}{146} {18}{green}{169}  {127}"
+1040 PRINT "    {18}{white}   {146}   {18}{red} {146}      {18}{white} {146}   {18} {146}  {169} {18}{green} {146}{169}{127}{18} "
+1050 PRINT "    {18}{white} {146} {127}{18}{127}{146}  {18}{red}   {146}    {18}{white} {146}   {18}   {146}  {18}{green} {146}  {18} "
+1060 PRINT "    {18}{white} {146}  {127}{18}{127}{146} {18}{red} {146}      {18}{white} {146}   {18} {146} {127}{18}{127}{146} {18}{green} {127}{169} "
+1070 PRINT "    {white}{169}   {127} {red}{127}{18}  {127}{146}   {white}{169}   {169}  {127} {green}{127}{18}  {146}{169}"
 1080 PRINT
-1090 PRINT "          {reverse on}{white}{169}   {127}"
-1100 PRINT "          {reverse on} {reverse off}   {127}"
-1110 PRINT "          {reverse on} {reverse off}     {reverse on}{127}{reverse off}  {reverse on}{169}{reverse off} {reverse on}{cyan}{169}  {127}{reverse off} {reverse on}{white}{127}{reverse off} {reverse on}{169}{reverse off}{169} {reverse on}{yellow}{169}  {reverse off}{169}"
-1120 PRINT "          {white}{127}{reverse on}   {127}{reverse off} {reverse on} {127}{reverse off} {reverse on} {reverse off} {reverse on}{cyan} {reverse off}  {reverse on} {reverse off} {reverse on}{white} {169}{reverse off}{169}  {reverse on}{yellow} "
-1130 PRINT "              {reverse on}{white} {reverse off} {reverse on} {reverse off}{127}{reverse on}{127} {reverse off} {reverse on}{cyan}    {reverse off} {reverse on}{white}  {127}{reverse off}  {reverse on}{yellow}   "
-1140 PRINT "          {reverse on}{white}{127}{reverse off}   {reverse on} {reverse off} {reverse on} {reverse off} {127}{reverse on} {reverse off} {reverse on}{cyan} {reverse off}  {reverse on} {reverse off} {reverse on}{white} {reverse off} {127}{reverse on}{127}{reverse off} {reverse on}{yellow} "
-1150 PRINT "          {white}{127}{reverse on}   {reverse off}{169} {169}  {127} {cyan}{169}  {127} {white}{169}  {127} {yellow}{127}{reverse on}  {127}"
+1090 PRINT "          {18}{white}{169}   {127}"
+1100 PRINT "          {18} {146}   {127}"
+1110 PRINT "          {18} {146}     {18}{127}{146}  {18}{169}{146} {18}{cyan}{169}  {127}{146} {18}{white}{127}{146} {18}{169}{146}{169} {18}{yellow}{169}  {146}{169}"
+1120 PRINT "          {white}{127}{18}   {127}{146} {18} {127}{146} {18} {146} {18}{cyan} {146}  {18} {146} {18}{white} {169}{146}{169}  {18}{yellow} "
+1130 PRINT "              {18}{white} {146} {18} {146}{127}{18}{127} {146} {18}{cyan}    {146} {18}{white}  {127}{146}  {18}{yellow}   "
+1140 PRINT "          {18}{white}{127}{146}   {18} {146} {18} {146} {127}{18} {146} {18}{cyan} {146}  {18} {146} {18}{white} {146} {127}{18}{127}{146} {18}{yellow} "
+1150 PRINT "          {white}{127}{18}   {146}{169} {169}  {127} {cyan}{169}  {127} {white}{169}  {127} {yellow}{127}{18}  {127}"
 1160 PRINT:PRINT:PRINT
 1170 PRINT "        {white}F1:HELP        F5:NEW GAME"
 1180 PRINT:PRINT
@@ -34,13 +34,13 @@
 !- [1290] HELP MENU DRAW
 !- =============================================
 1260 PRINT "{clear}":PRINT
-1270 PRINT "          {reverse on}{red}{127}{reverse off}  {reverse on}{169}{reverse off} {reverse on}{green}   {reverse off}{169} {reverse on}{cyan}{127}{reverse off}    {reverse on}{yellow}   {127}"
-1280 PRINT "          {reverse on}{red} {reverse off}  {reverse on} {reverse off} {reverse on}{green} {reverse off}    {reverse on}{cyan} {reverse off}    {reverse on}{yellow} {reverse off}  {reverse on} "
-1290 PRINT "          {reverse on}{red} {reverse off}  {reverse on} {reverse off} {reverse on}{green} {reverse off}    {reverse on}{cyan} {reverse off}    {reverse on}{yellow} {reverse off}  {reverse on} "
-1300 PRINT "          {reverse on}{red}    {reverse off} {reverse on}{green}   {reverse off}  {reverse on}{cyan} {reverse off}    {reverse on}{yellow}   {reverse off}{169}"
-1310 PRINT "          {reverse on}{red} {reverse off}  {reverse on} {reverse off} {reverse on}{green} {reverse off}    {reverse on}{cyan} {reverse off}    {reverse on}{yellow} "
-1320 PRINT "          {reverse on}{red} {reverse off}  {reverse on} {reverse off} {reverse on}{green} {reverse off}    {reverse on}{cyan} {reverse off}    {reverse on}{yellow} "
-1330 PRINT "          {red}{169}  {127} {reverse on}{green}   {127}{reverse off} {reverse on}{cyan}   {reverse off}{169} {yellow}{169}"
+1270 PRINT "          {18}{red}{127}{146}  {18}{169}{146} {18}{green}   {146}{169} {18}{cyan}{127}{146}    {18}{yellow}   {127}"
+1280 PRINT "          {18}{red} {146}  {18} {146} {18}{green} {146}    {18}{cyan} {146}    {18}{yellow} {146}  {18} "
+1290 PRINT "          {18}{red} {146}  {18} {146} {18}{green} {146}    {18}{cyan} {146}    {18}{yellow} {146}  {18} "
+1300 PRINT "          {18}{red}    {146} {18}{green}   {146}  {18}{cyan} {146}    {18}{yellow}   {146}{169}"
+1310 PRINT "          {18}{red} {146}  {18} {146} {18}{green} {146}    {18}{cyan} {146}    {18}{yellow} "
+1320 PRINT "          {18}{red} {146}  {18} {146} {18}{green} {146}    {18}{cyan} {146}    {18}{yellow} "
+1330 PRINT "          {red}{169}  {127} {18}{green}   {127}{146} {18}{cyan}   {146}{169} {yellow}{169}"
 1340 PRINT:PRINT:PRINT:PRINT
 1350 PRINT "             {white}H: TURN LEFT"
 1360 PRINT:PRINT:PRINT
