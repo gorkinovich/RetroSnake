@@ -26,8 +26,8 @@
 !- =============================================
 1130 GET KC$
 1131 FL%=0 : REM FLAG MENU
-1132 IF KC$="{f1}"  THEN 1150 : REM HELP MENU
-1133 IF KC$="{f5}"  THEN 3000 : REM NEW GAME
+1132 IF KC$="{F1}"  THEN 1150 : REM HELP MENU
+1133 IF KC$="{F5}"  THEN 3000 : REM NEW GAME
 1134 IF KC$="Q"     THEN 100  : REM EXIT GAME
 1135 IF KC$="{209}" THEN 100  : REM EXIT GAME
 1136 GOTO 1130
@@ -53,8 +53,7 @@
 !- =============================================
 1180 GET KC$
 1181 IF KC$="" THEN 1180 : REM RETRY GET KEY
-TODO: CHANGE THIS LINE NUMBER
-1182 IF FL%=1 THEN 1000  : REM CONTINUE GAME
+1182 IF FL%=1  THEN 2102 : REM CONTINUE GAME
 1183 GOTO 1000           : REM RETURN MAIN MENU
 !- =============================================
 !- END OF FILE

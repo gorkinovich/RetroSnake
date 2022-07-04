@@ -1,9 +1,9 @@
 !- =============================================
 !- RETROSNAKE (C) 2022 GORKA SUAREZ GARCIA
 !- =============================================
-!- INT.V: FL%, SD%, SL%, SZ%
-!- FLT.V: I, J, PTS, ZX, ZY
-!- STR.V: KC$
+!- INT.V: FH%, FL%, SD%, SL%, SZ%
+!- FLT.V: HX, HY, I, J, PTS
+!- STR.V: KC$, SN$
 !- INT.A: BK%(9), SC%(647)
 !- FLT.A: G(6)
 !- STR.A: G$(8)
@@ -48,8 +48,9 @@
 !- 6: DOWN BORDER
 !- 7: SCORE HUD
 !- 8: TITLE HUD
+!- 9: PAUSED HUD
 !- =============================================
-40 DIM G$(8)
+40 DIM G$(10)
 41 G$(0)=" "
 42 G$(1)="{209}"
 43 G$(2)="{211}"
@@ -70,6 +71,8 @@
 58 G$(4)=G$(4)+"{reverse off}"
 59 G$(7)="{white}SCORE:"
 60 G$(8)="{white}R{red}E{white}TR{green}O{white}SN{cyan}A{white}K{yellow}E{white}"
+61 G$(9)="PAUSED"
+62 G$(10)="GAME OVER!"
 !- =============================================
 !- INITIALIZE SYSTEM
 !- =============================================
@@ -126,14 +129,15 @@
 !- [250] SUB:GETCHAR(C,R)
 !- =============================================
 250 R0=PEEK(1024+(P1*40)+P0)
-251 IF R0>=0   AND R0<32  THEN R0=R0+64
-252 IF R0>=64  AND R0<96  THEN R0=R0+128
-253 IF R0>=96  AND R0<128 THEN R0=R0+64
-254 IF R0>=128 AND R0<192 THEN R0=R0-128
-255 IF R0>=192 AND R0<255 THEN R0=R0-64
-256 IF R0=94 THEN R0=255
-257 R0$=CHR$(R0)
-258 RETURN
+251 IF R0>=0   AND R0<32  THEN R1=R0+64
+252 IF R0>=32  AND R0<64  THEN R1=R0
+253 IF R0>=64  AND R0<96  THEN R1=R0+128
+254 IF R0>=96  AND R0<128 THEN R1=R0+64
+255 IF R0>=128 AND R0<192 THEN R1=R0-128
+256 IF R0>=192 AND R0<255 THEN R1=R0-64
+257 IF R0=94 THEN R1=255
+258 R0=R1:R0$=CHR$(R1)
+259 RETURN
 !- =============================================
 !- END OF FILE
 !- =============================================
